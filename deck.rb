@@ -32,9 +32,7 @@ class Array
       0
     end
   end
-  
-  private
-  
+
   def value
     rank = self.first.split.first
     case rank
