@@ -1,12 +1,9 @@
 #!/usr/bin/env ruby
-# 1.8 compatability
 require 'rubygems'
-gem 'minitest'
-# 1.9 pretty colors
+gem 'minitest' # use minitest gem, not 1.9.x built-in version
 require 'minitest/autorun'
-require 'minitest/pride'
-# test meh
-require './deck'
+require 'minitest/pride' # pretty colors
+require './deck' # class being tested
 
 class TestDeck < MiniTest::Unit::TestCase
   def setup
