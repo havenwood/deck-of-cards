@@ -24,13 +24,7 @@ class Array
   include Comparable
   
   def <=> other
-    if self.value > other.value
-      1
-    elsif self.value < other.value
-      -1
-    else
-      0
-    end
+    self.value <=> other.value
   end
 
   def value
