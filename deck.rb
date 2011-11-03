@@ -28,7 +28,8 @@ class Array
   end
 
   def value
-    case self.first.split.first
+    rank = self.first.split.first
+    case rank
     when "Ace"
       14
     when "King"
