@@ -39,7 +39,7 @@ class Array
     when "Jack"
       11
     else
-      rank
+      rank.to_i
     end
   end
 end
