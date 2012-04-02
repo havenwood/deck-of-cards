@@ -1,4 +1,6 @@
 class Deck
+  attr_reader :cards
+  
   def initialize
     @cards = []
     suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
@@ -16,7 +18,7 @@ class Deck
   
   def cut
     fail "card count is #{@cards.size}, not 52 as expected" unless @cards.size == 52
-    @cards.rotate(26)
+    @cards.rotate!(26)
   end
 end
 
