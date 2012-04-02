@@ -8,16 +8,13 @@ rescue LoadError
 ensure
   require 'minitest/pride'
   require 'set'
-  require 'pry'
   require './deck'
 end
 
 describe Deck do
   before do
     @deck = Deck.new
-    
     @unshuffled_cards = @deck
-    
     @correct_cards = []
     suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
     ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
@@ -34,7 +31,7 @@ describe Deck do
     end
     
     it "must have the correct cards" do
-      @deck.cards.must_equal @correct_cards
+      @deck.cards.to_set.must_equal @correct_cards.to_set
     end
   end
   
@@ -47,16 +44,19 @@ describe Deck do
   
   describe "when a deck is cut" do
     it "must have 52 cards" do
+      @deck.shuffle
       @deck.cut
       @deck.cards.count.must_equal 52
     end
     
     it "must have the correct cards" do
+      @deck.shuffle
       @deck.cut
       @deck.cards.to_set.must_equal @correct_cards.to_set
     end
     
-    it "wont be in the same order" do
+    it "cards will rotate by ???" do #TODO: this is fail
+      @shuffled
       @deck.cut
       @deck.cards.wont_equal @unshuffled_cards
     end
