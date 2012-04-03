@@ -2,32 +2,18 @@ class Deck
   attr_reader :cards
   
   def initialize
-    @shuffled = false
-    @cut = false
     @cards = []
-    suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
-    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+    suits = %w[Hearts Spades Diamonds Clubs]
+    ranks = %w[2 3 4 5 6 7 8 9 10 Jack Queen King Ace]
     suits.each { |suit| ranks.each { |rank| @cards << "#{rank} of #{suit}" } }
   end
 
   def shuffle
     @cards.shuffle!
-    @shuffled ||= true
-    @cards
-  end
-  
-  def shuffled?
-    @shuffled
   end
   
   def cut
-    @cards.rotate!(@cards.count / 2)
-    @cut ||= true
-    @cards
-  end
-  
-  def cut?
-    @cut
+    @cards.rotate! @cards.count / 2
   end
   
   def draw
@@ -45,13 +31,13 @@ class String
   def value
     rank = self.split.first
     case rank
-    when "Ace"
+    when 'Ace'
       14
-    when "King"
+    when 'King'
       13
-    when "Queen"
+    when 'Queen'
       12
-    when "Jack"
+    when 'Jack'
       11
     else
       rank.to_i
