@@ -37,7 +37,7 @@ class Deck
   end
 end
 
-class Array
+class String
   include Comparable
   
   def <=> other
@@ -45,7 +45,7 @@ class Array
   end
 
   def value
-    rank = self.first.split.first
+    rank = self.split.first
     case rank
     when "Ace"
       14
