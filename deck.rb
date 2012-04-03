@@ -23,7 +23,7 @@ class Deck
   def cut
     if shuffled?
       fail "card count is #{@cards.size}, not 52 as expected" unless @cards.size == 52
-      @cards.rotate!(26)
+      @cards.rotate! rand(20..32)
       @cut ||= true
       @dealer_just = :cut
     else
