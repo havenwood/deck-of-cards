@@ -1,15 +1,9 @@
 #!/usr/bin/env ruby
 
-begin
-  require 'minitest/autorun'
-rescue LoadError
-  require 'rubygems'
-  require 'minitest/autorun'
-ensure
-  require 'minitest/pride'
-  require 'set'
-  require './deck'
-end
+require 'minitest/autorun'
+require 'minitest/pride'
+require 'set'
+require './deck'
 
 describe Deck do
   before do
