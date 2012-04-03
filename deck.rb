@@ -13,7 +13,7 @@ class Deck
   def shuffle
     @cards.shuffle!
     @shuffled ||= true
-    @dealer_just = :shuffled
+    @cards
   end
   
   def shuffled?
@@ -23,7 +23,7 @@ class Deck
   def cut
     @cards.rotate!(@cards.count / 2)
     @cut ||= true
-    @dealer_just = :cut
+    @cards
   end
   
   def cut?
@@ -31,9 +31,7 @@ class Deck
   end
   
   def draw
-    card_drawn = @cards.shift
-    @dealer_just = :drew
-    card_drawn
+    @cards.shift
   end
 end
 
