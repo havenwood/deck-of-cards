@@ -8,7 +8,6 @@ require './deck'
 describe Deck do
   before do
     @deck = Deck.new
-    @unshuffled_cards = @deck
     @correct_cards = []
     suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
     ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
@@ -16,7 +15,7 @@ describe Deck do
   end
   
   describe "when a deck is created" do
-    it "must be a deck of cards" do
+    it "must pass sanity check" do
       @deck.must_be_instance_of Deck
     end
     
@@ -30,33 +29,55 @@ describe Deck do
   end
   
   describe "when a deck is shuffled" do
-    it "wont be in the same order" do
+    before do
       @deck.shuffle
-      @deck.cards.wont_equal @unshuffled_cards
+    end
+    
+    it "must be the same cards" do
+      @deck.cards.to_set.must_equal @correct_cards.to_set
+    end
+    
+    it "wont be in the same order" do
+      @deck.cards.wont_equal @correct_cards
     end
   end
   
   describe "when a deck is cut" do
-    it "must have 52 cards" do
-      @deck.shuffle
+    before do
       @deck.cut
-      @deck.cards.count.must_equal 52
     end
     
-    it "must have the correct cards" do
-      @deck.shuffle
-      @deck.cut
+    it "must be the same cards" do
       @deck.cards.to_set.must_equal @correct_cards.to_set
     end
     
-    it "cards will rotate by 20 to 32" do
-      true
+    it "must be cut in half" do
+      @deck.cards.first.must_equal @correct_cards[26]
+      @deck.cards.last.must_equal @correct_cards[25]
     end
   end
   
-  describe "when a card is compared" do
-    it "will win!" do
-      true
+  describe "when a card is drawn" do
+    before do
+      @card = @deck.draw.first
+    end
+    
+    it "must be a real card" do
+      @correct_cards.must_include @card
+    end
+  end
+  
+  describe "when five cards are drawn" do
+    before do
+      @cards = @deck.draw 5
+    end
+    
+    it "must be the expected number of cards" do
+      @cards.count.must_equal 5
+    end
+    
+    it "must be real cards" do
+      assert @cards.each.all? { |card| @correct_cards.include? card }
     end
   end
 end
