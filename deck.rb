@@ -13,11 +13,11 @@ class Deck
   end
   
   def cut
-    @cards.rotate! @cards.count / 2
+    @cards.rotate! @cards.count.div 2
   end
   
-  def draw
-    @cards.shift
+  def draw this_many = 1
+    @cards.shift this_many
   end
 end
 
