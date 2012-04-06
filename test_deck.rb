@@ -65,9 +65,13 @@ describe Deck do
     it "must be a real card" do
       @correct_cards.must_include @card
     end
+    
+    it "must reduce the deck size by one" do
+      @deck.cards.size.must_equal 51
+    end
   end
   
-  describe "when five cards are drawn" do
+  describe "when multiple cards are drawn" do
     before do
       @cards = @deck.draw 5
     end
@@ -76,8 +80,12 @@ describe Deck do
       @cards.count.must_equal 5
     end
     
-    it "must be real cards" do
-      assert @cards.each.all? { |card| @correct_cards.include? card }
+    it "must be all real cards" do
+      assert @cards.all? { |card| @correct_cards.include? card }
+    end
+    
+    it "must reduce the deck size as expected" do
+      @deck.cards.count.must_equal 47
     end
   end
 end
