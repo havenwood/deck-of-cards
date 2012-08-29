@@ -5,7 +5,7 @@ class Deck
     @cards = []
     suits = %w[Hearts Spades Diamonds Clubs]
     ranks = %w[2 3 4 5 6 7 8 9 10 Jack Queen King Ace]
-    suits.each { |suit| ranks.each { |rank| @cards << "#{rank} of #{suit}" } }
+    suits.product(ranks) { |suit, rank| @cards << "#{rank} of #{suit}" }
   end
 
   def shuffle
