@@ -3,11 +3,11 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'set'
-require_relative '../lib/deck'
+require_relative '../lib/deck-of-cards'
 
-describe Deck do
+describe DeckOfCards do
   before do
-    @deck = Deck.new
+    @deck = DeckOfCards.new
     @correct_cards = []
     suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
     ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
@@ -15,10 +15,6 @@ describe Deck do
   end
   
   describe "when a deck is created" do
-    it "must pass sanity check" do
-      @deck.must_be_instance_of Deck
-    end
-    
     it "must have 52 cards" do
       @deck.cards.count.must_equal 52
     end

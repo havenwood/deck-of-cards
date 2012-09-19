@@ -2,14 +2,14 @@
 
 ## Installation
 
-`gem install deck`
+`gem install deck-of-cards`
 
 ## Usage
 
 ```ruby
-require 'deck'
+require 'deck-of-cards'
 
-deck = Deck.new
+deck = DeckOfCards.new
 # => #<Deck:0x007fa6d4187e78
 # @cards=
 #  [#<2 of Hearts>,
