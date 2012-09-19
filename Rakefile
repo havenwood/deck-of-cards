@@ -1,5 +1,5 @@
-task :default => [:test]
+task default: [:test]
 
 task :test do
-  ruby "test_deck.rb"
+  ruby 'test/test_deck.rb'
 end
