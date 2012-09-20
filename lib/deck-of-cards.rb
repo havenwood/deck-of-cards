@@ -8,8 +8,12 @@ class DeckOfCards
   def initialize
     @cards = []
     suits = %w[Hearts Spades Diamonds Clubs]
-    ranks = %w[2 3 4 5 6 7 8 9 10 Jack Queen King Ace]
+    ranks = [*(2..10), 'Jack', 'Queen', 'King', 'Ace']
     suits.product(ranks) { |suit, rank| @cards << Card.new(rank, suit) }
+  end
+  
+  def to_s
+    "#{@cards.count}-card deck."
   end
 
   def shuffle

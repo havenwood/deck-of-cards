@@ -12,7 +12,7 @@ module CompareCards
     when 'Jack'
       11
     else
-      @rank.to_i
+      @rank
     end
   end
   
