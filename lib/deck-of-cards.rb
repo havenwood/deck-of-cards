@@ -8,7 +8,7 @@ class DeckOfCards
   def initialize
     @cards = []
     suits = %w[Hearts Spades Diamonds Clubs]
-    ranks = [*(2..10), 'Jack', 'Queen', 'King', 'Ace']
+    ranks = [*( 2..10), 'Jack', 'Queen', 'King', 'Ace']
     suits.product(ranks) { |suit, rank| @cards << Card.new(rank, suit) }
   end
   
