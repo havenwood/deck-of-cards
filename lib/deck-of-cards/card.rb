@@ -12,7 +12,7 @@ class Card
   end
   
   def value
-    case rank
+    case @rank
     when 'Ace'
       14
     when 'King'
@@ -22,15 +22,15 @@ class Card
     when 'Jack'
       11
     else
-      rank
+      @rank
     end
   end
   
   def to_s
-    "#{rank} of #{suit}"
+    "#{@rank} of #{@suit}"
   end
 
   def inspect
-    "<#{rank} of #{suit}>"
+    "<#{@rank} of #{@suit}>"
   end
 end
