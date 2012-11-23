@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
-$:.unshift File.expand_path '../../lib', __FILE__
+$:.unshift File.expand_path '../../lib/deck-of-cards', __FILE__
 
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'set'
-require 'deck-of-cards'
+require File.expand_path '../../lib/deck-of-cards.rb', __FILE__
 
 describe DeckOfCards do
   before do

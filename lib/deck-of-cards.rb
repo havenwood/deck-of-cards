@@ -1,3 +1,5 @@
+$:.unshift File.expand_path '../../lib/deck-of-cards', __FILE__
+
 require 'card'
 require 'version'
 

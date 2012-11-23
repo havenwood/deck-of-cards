@@ -19,8 +19,6 @@ class Card
     self.value <=> other_card.value
   end
   
-  private
-  
   def value
     case @rank
     when 'Ace'
