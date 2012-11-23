@@ -1,18 +1,4 @@
-class Card  
-  attr_reader :rank, :suit
-  
-  def initialize rank, suit
-    @rank, @suit = rank, suit
-  end
-  
-  def inspect
-    "#<#{@rank} of #{@suit}>"
-  end
-  
-  def to_s
-    "#{@rank} of #{@suit}"
-  end
-  
+Card = Struct.new :rank, :suit do
   include Comparable
   
   def <=> other_card
@@ -20,7 +6,7 @@ class Card
   end
   
   def value
-    case @rank
+    case rank
     when 'Ace'
       14
     when 'King'
@@ -30,7 +16,11 @@ class Card
     when 'Jack'
       11
     else
-      @rank
+      rank
     end
+  end
+  
+  def to_s
+    "#{rank} of #{suit}"
   end
 end
