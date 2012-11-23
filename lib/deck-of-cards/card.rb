@@ -1,5 +1,11 @@
-Card = Struct.new :rank, :suit do
+class Card
   include Comparable
+
+  attr_reader :rank, :suit
+
+  def initialize rank, suit
+    @rank, @suit = rank, suit
+  end
   
   def <=> other_card
     self.value <=> other_card.value
@@ -22,5 +28,9 @@ Card = Struct.new :rank, :suit do
   
   def to_s
     "#{rank} of #{suit}"
+  end
+
+  def inspect
+    "<#{rank} of #{suit}>"
   end
 end
