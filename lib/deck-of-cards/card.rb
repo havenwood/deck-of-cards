@@ -31,6 +31,6 @@ class Card
   end
 
   def inspect
-    "<#{@rank} of #{@suit}>"
+    "#<#{@rank} of #{@suit}>"
   end
 end

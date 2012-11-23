@@ -25,25 +25,29 @@ deck.shuffle
 # #<9 of Spades>,
 # #<10 of Spades>,
 # #<Queen of Clubs>,
+# #...,
 
 deck.split
-# => => [#<7 of Hearts>,
+# => [#<7 of Hearts>,
 # #<4 of Diamonds>,
 # #<King of Diamonds>,
 # #<4 of Clubs>,
-# #<6 of Clubs>,
+# #...,
 
 my_card = deck.draw
 # => #<7 of Hearts>
 
 your_card = deck.draw
-# => #<#<King of Diamonds>
+# => #<King of Diamonds>
 	
 my_card > your_card
 # => false
 
 my_card <= your_card
 # => true
+
+my_card == your_card
+# => false
 ```
 
 ## MIT License
