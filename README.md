@@ -1,4 +1,5 @@
 # Deck of Cards
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/Havenwood/deck-of-cards)
 
 ## Installation
 
