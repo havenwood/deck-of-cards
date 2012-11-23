@@ -1,4 +1,5 @@
 # Deck of Cards
+[![Build Status](https://secure.travis-ci.org/Havenwood/deck-of-cards.png?branch=master)](http://travis-ci.org/Havenwood/deck-of-cards)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/Havenwood/deck-of-cards)
 
 ## Installation
