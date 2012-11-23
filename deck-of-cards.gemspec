@@ -1,13 +1,14 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "deck-of-cards/version"
+$:.push File.expand_path '../lib/deck-of-cards', __FILE__
+require 'card'
+require 'version'
 
 Gem::Specification.new do |s|
-  s.name        = "deck-of-cards"
+  s.name        = 'deck-of-cards'
   s.version     = DeckOfCards::VERSION
-  s.authors     = ["shannon skipper"]
-  s.email       = ["shannonskipper@gmail.com"]
-  s.homepage    = "https://github.com/Havenwood/deck-of-cards"
+  s.authors     = ['shannon skipper']
+  s.email       = ['shannonskipper@gmail.com']
+  s.homepage    = 'https://github.com/Havenwood/deck-of-cards'
   s.summary     = %q{a minimalist 'deck of cards' gem}
   s.description = %q{A minimalist 'deck of cards' Ruby gem.}
 

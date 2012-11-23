@@ -1,15 +1,15 @@
-require_relative 'deck-of-cards/compare_cards'
-require_relative 'deck-of-cards/card'
-require_relative 'deck-of-cards/version'
+require 'card'
+require 'version'
 
 class DeckOfCards
   attr_reader :cards
   
+  SUITS = %w[Hearts Spades Diamonds Clubs]
+  RANKS = [*2..10, 'Jack', 'Queen', 'King', 'Ace']
+  
   def initialize
     @cards = []
-    suits = %w[Hearts Spades Diamonds Clubs]
-    ranks = [*2..10, 'Jack', 'Queen', 'King', 'Ace']
-    suits.product(ranks) { |suit, rank| @cards << Card.new(rank, suit) }
+    SUITS.product(RANKS) { |suit, rank| @cards << Card.new(rank, suit) }
   end
   
   def to_s
@@ -21,7 +21,7 @@ class DeckOfCards
   end
   
   def cut
-    @cards.rotate! @cards.count.div 2
+    @cards.rotate! @cards.count / 2
   end
   
   alias split cut

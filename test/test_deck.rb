@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
+$:.unshift File.expand_path '../../lib', __FILE__
 
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'set'
-require_relative '../lib/deck-of-cards'
+require 'deck-of-cards'
 
 describe DeckOfCards do
   before do
@@ -11,7 +12,11 @@ describe DeckOfCards do
     @correct_cards = []
     suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
     ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
-    suits.each { |suit| ranks.each { |rank| @correct_cards << Card.new(rank, suit) } }
+    suits.each do |suit| 
+      ranks.each do |rank|
+        @correct_cards << Card.new(rank, suit)
+      end
+    end
   end
   
   describe "when a deck is created" do
