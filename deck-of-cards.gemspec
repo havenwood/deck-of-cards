@@ -6,7 +6,7 @@ require 'version'
 Gem::Specification.new do |s|
   s.name        = 'deck-of-cards'
   s.version     = DeckOfCards::VERSION
-  s.authors     = ['shannon skipper']
+  s.authors     = ['Shannon Skipper']
   s.email       = ['shannonskipper@gmail.com']
   s.homepage    = 'https://github.com/Havenwood/deck-of-cards'
   s.summary     = %q{a minimalist 'deck of cards' gem}
