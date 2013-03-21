@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 $:.unshift File.expand_path '../../lib/deck-of-cards', __FILE__
 
 require 'minitest/autorun'
