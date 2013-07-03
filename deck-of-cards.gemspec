@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/Havenwood/deck-of-cards'
   s.summary     = %q{a minimalist 'deck of cards' gem}
   s.description = %q{A minimalist 'deck of cards' Ruby gem.}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "deck-of-cards"
 
